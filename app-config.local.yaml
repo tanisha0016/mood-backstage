@@ -1,0 +1,16 @@
+# Backstage override configuration for your local development environment
+catalog:
+  locations:
+    - type: file
+      target: /Users/tahuja/Desktop/demo-project/backstage-template/catalog-info.yaml
+
+backend:
+  baseUrl: http://localhost:7007
+  reading:
+    allow:
+      - host: localhost
+        ports: [7007]
+      - host: 127.0.0.1
+        ports: [7007]
+      - host: ::1
+      
