@@ -68,22 +68,36 @@ spec:
     #     #repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
     #     catalogInfoUrl: https://raw.githubusercontent.com/tanisha0016/demo-project/main/backstage-template/catalog-info.yaml
 
+    # - id: send-to-api
+    #   name: Send mood to go producer
+    #   action: http:backstage:request
+    #   input:
+    #     method: POST
+    #     path: '/api/proxy/mood'
+    #     headers:
+    #       Content-Type: application/json
+    #     body:
+    #       name: ${{ parameters.name }}
+    #       mood: ${{ parameters.mood }}
+    #       timestamp: "${{ now | date: '%Y-%m-%dT%H:%M:%SZ' }}"
+    #     logRequestBody: true
+    #     logResponseBody: true
+    #     skipAuth: true
+    #     continueOnBadResponse: true
+
     - id: send-to-api
       name: Send mood to go producer
-      action: http:backstage:request
+      action: http:fetch
       input:
         method: POST
-        path: '/api/proxy/mood'
+        url: http://localhost:7007/api/proxy/mood
         headers:
           Content-Type: application/json
         body:
           name: ${{ parameters.name }}
           mood: ${{ parameters.mood }}
-          timestamp: "${{ now | date: '%Y-%m-%dT%H:%M:%SZ' }}"
-        logRequestBody: true
-        logResponseBody: true
-        skipAuth: true
-        continueOnBadResponse: true
+
+
         # auth: false
         # token: null
 
