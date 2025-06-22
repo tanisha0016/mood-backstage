@@ -71,8 +71,8 @@ spec:
       action: http:backstage:request
       input:
         method: POST
-        #url: http://127.0.0.1:61810/mood
-        path: /mood
+        url: http://127.0.0.1:61810/mood
+        #path: /mood
         headers:
           Content-Type: application/json
         body:
