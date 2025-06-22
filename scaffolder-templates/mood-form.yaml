@@ -4,8 +4,8 @@ metadata:
   name: mood-form
   title: Mood Form
   description: Submit your mood and name
-spec:
   owner: user:guest
+spec:
   type: service
 
   parameters:
@@ -22,11 +22,28 @@ spec:
           title: Mood
 
   steps:
-    - id: log
-      name: Show Input
-      action: debug:log
+    # Each step executes an action, in this case one templates files into the working directory.
+    - id: fetch-base
+      name: Fetch Base
+      action: fetch:template
       input:
-        message: "Name: ${{ parameters.name }}; Mood: ${{ parameters.mood }}"
+        url: ./content
+        values:
+          name: ${{ parameters.name }}
+
+    # This step publishes the contents of the working directory to GitHub.
+    # If you or your organization prefer another default branch name over 'main'
+    # you can change that here.
+    - id: publish
+      name: Publish
+      action: publish:github
+      input:
+        allowedHosts: ['github.com']
+        description: This is ${{ parameters.name }}
+        repoUrl: ${{ parameters.repoUrl }}
+        defaultBranch: 'main'
+
+    # The final step is to register our new component in the catalog.
     - id: register
       name: Register
       action: catalog:register
@@ -34,5 +51,11 @@ spec:
         repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
         catalogInfoPath: '/catalog-info.yaml'
 
+  # Outputs are displayed to the user after a successful execution of the template.
   output:
-    text: "Mood received for ${{ parameters.name }}: ${{ parameters.mood }}"
+    links:
+      - title: Repository
+        url: ${{ steps['publish'].output.remoteUrl }}
+      - title: Open in catalog
+        icon: catalog
+        entityRef: ${{ steps['register'].output.entityRef }}
