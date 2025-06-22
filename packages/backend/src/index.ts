@@ -7,7 +7,7 @@
  */
 
 import { createBackend } from '@backstage/backend-defaults';
-
+// import  httpRequestModule from '@roadiehq/scaffolder-backend-module-http-request';
 const backend = createBackend();
 
 backend.add(import('@backstage/plugin-app-backend'));
@@ -60,5 +60,6 @@ backend.add(import('@backstage/plugin-kubernetes-backend'));
 
 backend.add(import('@backstage/plugin-proxy-backend'));
 backend.add(import('@roadiehq/scaffolder-backend-module-http-request'));
+// backend.add(httpRequestModule());
 backend.start();
 
