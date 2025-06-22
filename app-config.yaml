@@ -14,6 +14,9 @@ backend:
   #   keys:
   #     - secret: ${BACKEND_SECRET}
   baseUrl: http://localhost:7007
+  reading:
+    allow:
+      - host: raw.githubusercontent.com
   listen:
     port: 7007
     # Uncomment the following host directive to bind to specific interfaces
@@ -77,7 +80,7 @@ catalog:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
   rules:
-    - allow: [Component, System, API, Resource, Location, Template]
+    - allow: [Component, System, API, Resource, Location, Template, Domain]
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
@@ -101,7 +104,8 @@ catalog:
 
     - type: file
       target: ./mood-backstage/scaffolder-templates/catalog-info.yaml
-
+    - type: url
+      target: https://github.com/tanisha0016/mood-backstage/blob/main/scaffolder-templates/catalog-info.yaml
     ## Uncomment these lines to add more example data
     # - type: url
     #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
