@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
-kind: Location
+kind: Template
 metadata:
   name: mood-templates
 spec:
-  type: file
-  targets:
-    - ./mood-form.yaml
+  type: service
+  path: https://github.com/tanisha0016/mood-backstage/blob/main/scaffolder-templates/mood-form.yaml
+  
