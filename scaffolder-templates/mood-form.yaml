@@ -72,9 +72,9 @@ spec:
       action: http:backstage:request
       input:
         method: POST
-        url: http://localhost:7007/api/proxy/mood
+        #url: http://localhost:7007/api/proxy/mood
         #url: http://127.0.0.1:61810/mood
-        #path: /api/proxy/mood
+        path: /api/proxy/mood
         headers:
           Content-Type: application/json
         body:
