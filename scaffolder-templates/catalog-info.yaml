@@ -6,7 +6,7 @@ metadata:
   description: A collection of templates for mood submission and management
 spec:
   type: url
-  path: https://raw.githubusercontent.com/tanisha0016/mood-backstage/main/scaffolder-templates/mood-form.yaml
+  target: https://raw.githubusercontent.com/tanisha0016/mood-backstage/main/scaffolder-templates/mood-form.yaml
   owner: tanisha
   lifecycle: experimental
   
