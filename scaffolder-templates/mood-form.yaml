@@ -17,9 +17,24 @@ spec:
         name:
           type: string
           title: Your Name
+          description: Enter your name
         mood:
           type: string
           title: Mood
+          enum:
+            - Happy
+            - Sad
+            - Neutral
+            - Excited
+            - Anxious
+          enumNames:
+            - Happy 
+            - Sad
+            - Neutral
+            - Excited
+            - Anxious
+          
+          description: Select your current mood
 
   steps:
     # Each step executes an action, in this case one templates files into the working directory.
