@@ -35,6 +35,8 @@ backend:
     client: better-sqlite3
     connection: ':memory:'
   # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
+  logging:
+    level: debug # Set the logging level to debug for more verbose output, change to info or warn for production
 
 integrations:
   github:
@@ -60,6 +62,8 @@ proxy:
       pathRewrite:
         '^/api/proxy/mood/?': '/mood'
       credentials: 'dangerously-allow-unauthenticated'
+      timeout: 30000
+      logLevel: 'debug'
 
 
 

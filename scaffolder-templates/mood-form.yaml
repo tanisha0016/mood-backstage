@@ -72,12 +72,18 @@ spec:
       action: http:backstage:request
       input:
         method: POST
-        path: /api/proxy/mood
+        path: /mood
         headers:
           Content-Type: application/json
         body:
           name: ${{ parameters.name }}
           mood: ${{ parameters.mood }}
+        logRequestBody: true
+        logResponseBody: true
+        skipAuth: true
+        continueOnBadResponse: true
+        auth: false
+        token: null
 
   # Outputs are displayed to the user after a successful execution of the template.
   output:
