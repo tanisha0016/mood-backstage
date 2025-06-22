@@ -82,9 +82,7 @@ spec:
           
         logRequestBody: true
         logResponseBody: true
-        skipAuth: true
         continueOnBadResponse: true
-        auth: false
         logLevel: 'debug'
 
     # - id: send-to-api
