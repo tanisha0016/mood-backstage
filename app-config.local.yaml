@@ -29,5 +29,7 @@ proxy:
       allow:
         - anonymous
       pathRewrite:
-        '^/api/proxy/mood/?': '/mood'
+        '^/mood': '/mood'
       credentials: 'dangerously-allow-unauthenticated'
+      timeout: 30000
+      logLevel: 'debug'
