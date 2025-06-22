@@ -64,14 +64,14 @@ spec:
       action: catalog:register
       input:
         #repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
-        catalogInfoPath: https://raw.githubusercontent.com/tanisha0016/demo-project/main/backstage-template/catalog-info.yaml
+        catalogInfoUrl: https://raw.githubusercontent.com/tanisha0016/demo-project/main/backstage-template/catalog-info.yaml
 
     - id: send-to-api
       name: Send mood to go producer
       action: http:backstage:request
       input:
         method: POST
-        url: http://localhost:30080/mood
+        url: http://127.0.0.1:61810/mood
         headers:
           Content-Type: application/json
         body:
