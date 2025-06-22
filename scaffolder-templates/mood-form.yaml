@@ -87,10 +87,10 @@ spec:
 
     - id: send-to-api
       name: Send mood to go producer
-      action: http:fetch
+      action: http:backstage:request
       input:
         method: POST
-        url: http://localhost:7007/api/proxy/mood
+        url: /proxy/mood
         headers:
           Content-Type: application/json
         body:

@@ -7,6 +7,8 @@
  */
 
 import { createBackend } from '@backstage/backend-defaults';
+// import  httpFetchAction  from '@roadiehq/scaffolder-backend-module-http-request';
+
 // import  httpRequestModule from '@roadiehq/scaffolder-backend-module-http-request';
 const backend = createBackend();
 
@@ -18,7 +20,7 @@ backend.add(import('@backstage/plugin-techdocs-backend'));
 backend.add(import('@backstage/plugin-scaffolder-backend'));
 backend.add(import('@backstage/plugin-scaffolder-backend-module-github'));
 
-
+// backend.add(httpFetchAction);
 
 
 
