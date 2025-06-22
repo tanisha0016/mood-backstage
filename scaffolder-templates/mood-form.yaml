@@ -73,14 +73,15 @@ spec:
       action: http:backstage:request
       input:
         method: POST
-        path: '/api/proxy/mood'
+        path: '/api/mood-plugin/submit'
         headers:
           Content-Type: application/json
           Authorization: ""
         body:
           name: ${{ parameters.name }}
           mood: ${{ parameters.mood }}
-          
+          timestamp: "${{ now | date: '%Y-%m-%dT%H:%M:%SZ' }}"
+
         logRequestBody: true
         logResponseBody: true
         continueOnBadResponse: true
