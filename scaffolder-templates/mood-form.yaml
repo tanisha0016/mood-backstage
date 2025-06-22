@@ -72,7 +72,7 @@ spec:
       input:
         method: POST
         #url: http://127.0.0.1:61810/mood
-        path: /mood
+        path: /api/proxy/mood
         headers:
           Content-Type: application/json
         body:
