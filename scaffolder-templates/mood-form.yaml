@@ -72,7 +72,7 @@ spec:
       action: http:backstage:request
       input:
         method: POST
-        path: /mood
+        path: /api/proxy/mood
         headers:
           Content-Type: application/json
         body:
