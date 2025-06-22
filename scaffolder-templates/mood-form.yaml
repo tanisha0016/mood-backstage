@@ -76,6 +76,7 @@ spec:
         path: '/api/proxy/mood'
         headers:
           Content-Type: application/json
+          Authorization: ""
         body:
           name: ${{ parameters.name }}
           mood: ${{ parameters.mood }}
