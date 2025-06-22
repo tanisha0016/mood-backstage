@@ -63,8 +63,8 @@ spec:
       name: Register
       action: catalog:register
       input:
-        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
-        catalogInfoPath: '/catalog-info.yaml'
+        #repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: https://raw.githubusercontent.com/tanisha0016/demo-project/main/backstage-template/catalog-info.yaml
 
     - id: send-to-api
       name: Send mood to go producer
@@ -80,9 +80,6 @@ spec:
 
   # Outputs are displayed to the user after a successful execution of the template.
   output:
-    links:
-      - title: Repository
-        url: ${{ steps['publish'].output.remoteUrl }}
-      - title: Open in catalog
-        icon: catalog
-        entityRef: ${{ steps['register'].output.entityRef }}
+    text:
+      - title: mood submitted to go producer
+        content: "Thanks for submitting your mood!"
