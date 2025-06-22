@@ -69,7 +69,7 @@ spec:
     #     catalogInfoUrl: https://raw.githubusercontent.com/tanisha0016/demo-project/main/backstage-template/catalog-info.yaml
 
     - id: send-to-api
-      name: Send mood to go producer
+      name: Send mood to Go producer
       action: http:backstage:request
       input:
         method: POST
@@ -79,7 +79,7 @@ spec:
         body:
           name: ${{ parameters.name }}
           mood: ${{ parameters.mood }}
-          timestamp: "${{ now | date: '%Y-%m-%dT%H:%M:%SZ' }}"
+          
         logRequestBody: true
         logResponseBody: true
         skipAuth: true
@@ -104,5 +104,5 @@ spec:
   # Outputs are displayed to the user after a successful execution of the template.
   output:
     text:
-      - title: mood submitted to go producer
+      - title: Mood submitted to Go producer
         content: "Thanks for submitting your mood!"
