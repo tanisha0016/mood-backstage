@@ -53,6 +53,9 @@ proxy:
       target: 'http://127.0.0.1:61810'
       changeOrigin: true
 
+
+  
+
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
 # and an external cloud storage when deploying TechDocs for production use-case.

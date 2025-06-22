@@ -17,3 +17,7 @@ backend:
       - host: github.com
         
       
+proxy:
+  '/mood':
+    target: 'http://127.0.0.1:61810'  # ← Your Go producer’s Minikube URL
+    changeOrigin: true
