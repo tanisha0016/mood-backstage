@@ -23,13 +23,13 @@ proxy:
     enabled: false
   endpoints:
     '/mood':
-      target: 'http://127.0.0.1:61810/mood'
+      target: 'http://127.0.0.1:61810'
       changeOrigin: true
       allowedMethods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
       allow:
         - anonymous
-      pathRewrite:
-        '^/mood': ''
+      # pathRewrite:
+      #   '^/mood': ''
       credentials: 'dangerously-allow-unauthenticated'
       timeout: 30000
       logLevel: 'debug'
