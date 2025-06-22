@@ -46,6 +46,7 @@ spec:
         values:
           name: ${{ parameters.name }}
           mood: ${{ parameters.mood }}
+          timestamp: "${{ now | date: '%Y-%m-%dT%H:%M:%SZ' }}"
 
     # This step publishes the contents of the working directory to GitHub.
     # If you or your organization prefer another default branch name over 'main'
@@ -78,6 +79,7 @@ spec:
         body:
           name: ${{ parameters.name }}
           mood: ${{ parameters.mood }}
+          timestamp: "${{ now | date: '%Y-%m-%dT%H:%M:%SZ' }}"
         logRequestBody: true
         logResponseBody: true
         skipAuth: true

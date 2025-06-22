@@ -25,6 +25,8 @@ proxy:
     '/mood':
       target: 'http://127.0.0.1:61810'
       changeOrigin: true
+      pathRewrite:
+        '^/api/proxy/mood': '/mood'
       allowedMethods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
       allowedHeaders: ['Content-Type', 'Authorization']
       allow:

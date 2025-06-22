@@ -49,22 +49,22 @@ integrations:
     #   apiBaseUrl: https://ghe.example.net/api/v3
     #   token: ${GHE_TOKEN}
 
-proxy:
-  httpAuth:
-    enabled: false
-  endpoints:
-    '/mood':
-      target: 'http://127.0.0.1:61810'
-      changeOrigin: true
-      allowedMethods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
-      allowedHeaders: ['Content-Type', 'Authorization']
-      allow:
-        - anonymous
-      # pathRewrite:
-      #   '^/mood': ''
-      credentials: 'dangerously-allow-unauthenticated'
-      timeout: 30000
-      logLevel: 'debug'
+# proxy:
+#   httpAuth:
+#     enabled: false
+#   endpoints:
+#     '/mood':
+#       target: 'http://127.0.0.1:61810'
+#       changeOrigin: true
+#       allowedMethods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
+#       allowedHeaders: ['Content-Type', 'Authorization']
+#       allow:
+#         - anonymous
+#       # pathRewrite:
+#       #   '^/mood': ''
+#       credentials: 'dangerously-allow-unauthenticated'
+#       timeout: 30000
+#       logLevel: 'debug'
 
 
 
