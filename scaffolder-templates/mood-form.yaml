@@ -84,6 +84,8 @@ spec:
         logResponseBody: true
         skipAuth: true
         continueOnBadResponse: true
+        auth: false
+        logLevel: 'debug'
 
     # - id: send-to-api
     #   name: Send mood to go producer
