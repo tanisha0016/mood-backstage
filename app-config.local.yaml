@@ -2,7 +2,7 @@
 catalog:
   locations:
     - type: file
-      target: /Users/tahuja/Desktop/demo-project/backstage-template/catalog-info.yaml
+      target: /mood-backstage/scaffolder-templates/catalog-info.yaml
 
 backend:
   baseUrl: http://localhost:7007

@@ -2,8 +2,11 @@ apiVersion: backstage.io/v1alpha1
 kind: Template
 metadata:
   name: mood-templates
+  title: Mood Templates
+  description: A collection of templates for mood submission and management
 spec:
   type: service
   path: https://raw.githubusercontent.com/tanisha0016/mood-backstage/main/scaffolder-templates/mood-form.yaml
-
+  owner: tanisha
+  lifecycle: experimental
   
