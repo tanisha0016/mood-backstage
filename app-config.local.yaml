@@ -13,4 +13,5 @@ backend:
       - host: 127.0.0.1
         ports: [7007]
       - host: ::1
+      - host: raw.githubusercontent.com
       
