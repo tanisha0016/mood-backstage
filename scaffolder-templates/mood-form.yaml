@@ -45,6 +45,7 @@ spec:
         url: ./content
         values:
           name: ${{ parameters.name }}
+          mood: ${{ parameters.mood }}
 
     # This step publishes the contents of the working directory to GitHub.
     # If you or your organization prefer another default branch name over 'main'
@@ -71,8 +72,9 @@ spec:
       action: http:backstage:request
       input:
         method: POST
+        url: http://localhost:7007/api/proxy/mood
         #url: http://127.0.0.1:61810/mood
-        path: /api/proxy/mood
+        #path: /api/proxy/mood
         headers:
           Content-Type: application/json
         body:

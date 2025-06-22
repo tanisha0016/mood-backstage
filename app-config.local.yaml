@@ -1,4 +1,5 @@
 # Backstage override configuration for your local development environment
+
 catalog:
   locations:
     - type: file
@@ -18,7 +19,15 @@ backend:
         
       
 proxy:
+  httpAuth:
+    enabled: false
   endpoints:
     '/mood':
       target: 'http://127.0.0.1:61810'
       changeOrigin: true
+      allowedMethods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
+      allow:
+        - anonymous
+      pathRewrite:
+        '^/api/proxy/mood/?': '/mood'
+      credentials: 'dangerously-allow-unauthenticated'
