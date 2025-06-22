@@ -1,0 +1,38 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: mood-form
+  title: Mood Form
+  description: Submit your mood and name
+spec:
+  owner: user:guest
+  type: form
+
+  parameters:
+    - title: Mood Submission
+      required:
+        - name
+        - mood
+      properties:
+        name:
+          type: string
+          title: Your Name
+        mood:
+          type: string
+          title: Mood
+
+  steps:
+    - id: log
+      name: Show Input
+      action: debug:log
+      input:
+        message: "Name: ${{ parameters.name }}; Mood: ${{ parameters.mood }}"
+    - id: register
+      name: Register
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: '/catalog-info.yaml'
+
+  output:
+    text: "Mood received for ${{ parameters.name }}: ${{ parameters.mood }}"

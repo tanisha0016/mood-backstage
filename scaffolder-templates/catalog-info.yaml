@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: mood-templates
+spec:
+  type: file
+  targets:
+    - ./mood-form.yaml
