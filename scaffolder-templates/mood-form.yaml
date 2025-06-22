@@ -68,7 +68,7 @@ spec:
 
     - id: send-to-api
       name: Send mood to go producer
-      action: http:backstage:request
+      action: http:request
       input:
         method: POST
         url: http://127.0.0.1:61810/mood
