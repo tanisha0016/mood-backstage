@@ -2,7 +2,7 @@ import {
   mockCredentials,
   startTestBackend,
 } from '@backstage/backend-test-utils';
-import { moodPluginPlugin } from './plugin';
+import moodPluginPlugin from './plugin';
 import request from 'supertest';
 import { catalogServiceMock } from '@backstage/plugin-catalog-node/testUtils';
 

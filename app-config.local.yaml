@@ -22,7 +22,7 @@ proxy:
   httpAuth:
     enabled: false
   endpoints:
-    '/api/proxy/mood':
+    '/mood':
       target: 'http://127.0.0.1:61810'
       changeOrigin: true
       pathRewrite:

@@ -6603,7 +6603,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@internal/plugin-mood-plugin-backend@workspace:^, @internal/plugin-mood-plugin-backend@workspace:plugins/mood-plugin-backend":
+"@internal/plugin-mood-plugin-backend@workspace:plugins/mood-plugin-backend":
   version: 0.0.0-use.local
   resolution: "@internal/plugin-mood-plugin-backend@workspace:plugins/mood-plugin-backend"
   dependencies:
@@ -6612,7 +6612,9 @@ __metadata:
     "@backstage/backend-test-utils": "npm:^1.6.0"
     "@backstage/catalog-client": "npm:^1.9.1"
     "@backstage/cli": "npm:^0.33.0"
+    "@backstage/config": "npm:^1.3.2"
     "@backstage/errors": "npm:^1.2.7"
+    "@backstage/plugin-catalog-common": "npm:^1.1.4"
     "@backstage/plugin-catalog-node": "npm:^1.17.1"
     "@types/express": "npm:^4.17.6"
     "@types/supertest": "npm:^2.0.12"
@@ -16117,7 +16119,7 @@ __metadata:
     "@backstage/plugin-search-backend-module-techdocs": "npm:^0.4.3"
     "@backstage/plugin-search-backend-node": "npm:^1.3.12"
     "@backstage/plugin-techdocs-backend": "npm:^2.0.3"
-    "@internal/plugin-mood-plugin-backend": "workspace:^"
+    "@internal/plugin-mood-plugin-backend": "workspace:plugins/mood-plugin-backend"
     "@roadiehq/scaffolder-backend-module-http-request": "npm:^5.3.2"
     app: "link:../app"
     better-sqlite3: "npm:^9.0.0"

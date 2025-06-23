@@ -1,7 +1,6 @@
 import {
   mockCredentials,
   mockErrorHandler,
-  mockServices,
 } from '@backstage/backend-test-utils';
 import express from 'express';
 import request from 'supertest';
@@ -28,10 +27,10 @@ describe('createRouter', () => {
       listTodos: jest.fn(),
       getTodo: jest.fn(),
     };
-    const router = await createRouter({
-      httpAuth: mockServices.httpAuth(),
-      todoListService,
-    });
+    // Provide mock logger and config for RouterOptions
+    const mockLogger = { info: jest.fn(), warn: jest.fn(), error: jest.fn() } as any;
+    const mockConfig = { getOptionalString: jest.fn().mockReturnValue(undefined) } as any;
+    const router = await createRouter({ logger: mockLogger, config: mockConfig });
     app = express();
     app.use(router);
     app.use(mockErrorHandler());

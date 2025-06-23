@@ -73,7 +73,7 @@ spec:
       action: http:backstage:request
       input:
         method: POST
-        path: '/api/mood-plugin/submit'
+        path: '/api/proxy/mood'
         headers:
           Content-Type: application/json
           Authorization: ""

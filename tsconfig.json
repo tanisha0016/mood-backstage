@@ -10,8 +10,15 @@
   ],
   "exclude": ["node_modules"],
   "compilerOptions": {
-    "outDir": "dist-types",
+    "outDir": "dist",
     "rootDir": ".",
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+
+    "paths": {
+      "@internal/plugin-mood-plugin-backend": [
+        "plugins/mood-plugin-backend/dist"
+      ]
+    }
   }
 }
