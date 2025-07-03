@@ -47,6 +47,21 @@ spec:
           name: ${{ parameters.name }}
           mood: ${{ parameters.mood }}
           timestamp: "${{ now | date: '%Y-%m-%dT%H:%M:%SZ' }}"
+    - id: test-post
+      name: Send test POST to webhook.site
+      action: http:backstage:request
+      input:
+        method: POST
+        url: 'https://webhook.site/5b417a33-5978-4663-a564-150b6f4c2064'
+        headers:
+          Content-Type: application/json
+        body:
+          name: ${{ parameters.name }}
+          mood: ${{ parameters.mood }}
+        logRequestBody: true
+        logResponseBody: true
+        continueOnBadResponse: true
+
 
     # This step publishes the contents of the working directory to GitHub.
     # If you or your organization prefer another default branch name over 'main'
@@ -68,24 +83,31 @@ spec:
     #     #repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
     #     catalogInfoUrl: https://raw.githubusercontent.com/tanisha0016/demo-project/main/backstage-template/catalog-info.yaml
 
-    - id: send-to-api
-      name: Send mood to Go producer
-      action: http:backstage:request
-      input:
-        method: POST
-        path: '/api/proxy/mood'
-        headers:
-          Content-Type: application/json
-          Authorization: ""
-        body:
-          name: ${{ parameters.name }}
-          mood: ${{ parameters.mood }}
-          timestamp: "${{ now | date: '%Y-%m-%dT%H:%M:%SZ' }}"
 
-        logRequestBody: true
-        logResponseBody: true
-        continueOnBadResponse: true
-        logLevel: 'debug'
+
+
+
+
+
+    #this is the main one
+    # - id: send-to-api
+    #   name: Send mood to Go producer
+    #   action: http:backstage:request
+    #   input:
+    #     method: POST
+    #     path: '/api/proxy/mood'
+    #     headers:
+    #       Content-Type: application/json
+    #       Authorization: ""
+    #     body:
+    #       name: ${{ parameters.name }}
+    #       mood: ${{ parameters.mood }}
+    #       timestamp: "${{ now | date: '%Y-%m-%dT%H:%M:%SZ' }}"
+
+    #     logRequestBody: true
+    #     logResponseBody: true
+    #     continueOnBadResponse: true
+    #     logLevel: 'debug'
 
     # - id: send-to-api
     #   name: Send mood to go producer
