@@ -107,11 +107,9 @@ catalog:
     # Local example organizational data
     
 
+    
     - type: file
-      target: ../../../demo-project/backstage-template/mood-form.yaml
-
-    - type: file
-      target: ./mood-backstage/scaffolder-templates/catalog-info.yaml
+      target: ./scaffolder-templates/catalog-info.yaml
 
     - type: url
       target: https://raw.githubusercontent.com/tanisha0016/mood-backstage/main/scaffolder-templates/mood-form.yaml

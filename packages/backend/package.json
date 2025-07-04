@@ -41,6 +41,7 @@
     "@backstage/plugin-search-backend-node": "^1.3.12",
     "@backstage/plugin-techdocs-backend": "^2.0.3",
     "@internal/plugin-mood-plugin-backend": "workspace:plugins/mood-plugin-backend",
+    "@internal/plugin-scaffolder-backend-module-my-custom-actions": "workspace:^",
     "@roadiehq/scaffolder-backend-module-http-request": "^5.3.2",
     "app": "link:../app",
     "better-sqlite3": "^9.0.0",

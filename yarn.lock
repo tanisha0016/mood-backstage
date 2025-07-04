@@ -4595,6 +4595,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@backstage/plugin-scaffolder-node-test-utils@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@backstage/plugin-scaffolder-node-test-utils@npm:0.3.0"
+  dependencies:
+    "@backstage/backend-plugin-api": "npm:^1.4.0"
+    "@backstage/backend-test-utils": "npm:^1.6.0"
+    "@backstage/plugin-scaffolder-node": "npm:^0.9.0"
+    "@backstage/types": "npm:^1.2.1"
+    winston: "npm:^3.2.1"
+    winston-transport: "npm:^4.7.0"
+  peerDependencies:
+    "@types/react": ^17.0.0 || ^18.0.0
+    react: ^17.0.0 || ^18.0.0
+    react-dom: ^17.0.0 || ^18.0.0
+    react-router-dom: ^6.3.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10c0/c6c969a611880a5e1f3963d378f33c7bb3fd8139ceefae9f36c9aa9c5294d42ab1f86562a3361e5ef1b92abb5a963a39d13a90c62e6be893e6b6d315d36baf4f
+  languageName: node
+  linkType: hard
+
 "@backstage/plugin-scaffolder-node@npm:^0.6.2":
   version: 0.6.3
   resolution: "@backstage/plugin-scaffolder-node@npm:0.6.3"
@@ -6649,6 +6671,17 @@ __metadata:
     react-use: "npm:^17.2.4"
   peerDependencies:
     react: ^16.13.1 || ^17.0.0 || ^18.0.0
+  languageName: unknown
+  linkType: soft
+
+"@internal/plugin-scaffolder-backend-module-my-custom-actions@workspace:^, @internal/plugin-scaffolder-backend-module-my-custom-actions@workspace:plugins/scaffolder-backend-module-my-custom-actions":
+  version: 0.0.0-use.local
+  resolution: "@internal/plugin-scaffolder-backend-module-my-custom-actions@workspace:plugins/scaffolder-backend-module-my-custom-actions"
+  dependencies:
+    "@backstage/backend-plugin-api": "npm:^1.4.0"
+    "@backstage/cli": "npm:^0.33.0"
+    "@backstage/plugin-scaffolder-node": "npm:^0.9.0"
+    "@backstage/plugin-scaffolder-node-test-utils": "npm:^0.3.0"
   languageName: unknown
   linkType: soft
 
@@ -16120,6 +16153,7 @@ __metadata:
     "@backstage/plugin-search-backend-node": "npm:^1.3.12"
     "@backstage/plugin-techdocs-backend": "npm:^2.0.3"
     "@internal/plugin-mood-plugin-backend": "workspace:plugins/mood-plugin-backend"
+    "@internal/plugin-scaffolder-backend-module-my-custom-actions": "workspace:^"
     "@roadiehq/scaffolder-backend-module-http-request": "npm:^5.3.2"
     app: "link:../app"
     better-sqlite3: "npm:^9.0.0"

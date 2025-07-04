@@ -2,10 +2,10 @@
 
 catalog:
   locations:
+    # - type: file
+    #   target: /mood-backstage/scaffolder-templates/catalog-info.yaml
     - type: file
-      target: /mood-backstage/scaffolder-templates/catalog-info.yaml
-    - type: file
-      target: ./scaffolder-templates/catalog-info.yaml
+      target: scaffolder-templates/catalog-info.yaml
 
 backend:
   baseUrl: http://localhost:7007
@@ -25,7 +25,7 @@ proxy:
     enabled: false
   endpoints:
     '/mood':
-      target: 'http://127.0.0.1:64842'
+      target: 'http://127.0.0.1:51339'
       #target: 'http://192.168.49.2:31234/mood'
       changeOrigin: true
       pathRewrite:
