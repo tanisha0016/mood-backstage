@@ -49,18 +49,18 @@ spec:
           timestamp: "${{ now | date: '%Y-%m-%dT%H:%M:%SZ' }}"
     - id: test-post
       name: Send test POST to webhook.site
-      action: http:backstage:request
+      action: http:fetch
       input:
-        method: POST
         url: 'https://webhook.site/5b417a33-5978-4663-a564-150b6f4c2064'
-        headers:
-          Content-Type: application/json
-        body:
-          name: ${{ parameters.name }}
-          mood: ${{ parameters.mood }}
-        logRequestBody: true
-        logResponseBody: true
-        continueOnBadResponse: true
+        method: POST
+      headers:
+        Content-Type: application/json
+      body:
+        name: ${{ parameters.name }}
+        mood: ${{ parameters.mood }}
+      logRequestBody: true
+      logResponseBody: true
+      continueOnError: true
 
 
     # This step publishes the contents of the working directory to GitHub.
