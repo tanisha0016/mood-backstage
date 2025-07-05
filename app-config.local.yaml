@@ -25,11 +25,11 @@ proxy:
     enabled: false
   endpoints:
     '/mood':
-      target: 'http://localhost:30080'
+      target: 'http://192.168.49.2:30080'
       #target: 'http://192.168.49.2:31234/mood'
       changeOrigin: true
       pathRewrite:
-        '^/api/proxy/mood': '/mood'
+        '^/mood': ''
       allowedMethods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
       allowedHeaders: ['Content-Type', 'Authorization']
       allow:
